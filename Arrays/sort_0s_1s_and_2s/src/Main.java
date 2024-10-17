@@ -1,8 +1,10 @@
 //{ Driver Code Starts
-import java.io.*;
-import java.util.*;
 
-class GFG {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -11,7 +13,7 @@ class GFG {
         while (t-- > 0) {
             String input = br.readLine();
             String[] inputArray = input.split("\\s+");
-            int a[] = new int[inputArray.length];
+            int[] a = new int[inputArray.length];
 
             for (int i = 0; i < a.length; i++) a[i] = Integer.parseInt(inputArray[i]);
 
@@ -42,7 +44,7 @@ class Solution {
             if (num == 0) ++zeroCnt;
             else if (num == 1) ++oneCnt;
             else if (num == 2) ++twoCnt;
-            else throw new RuntimeException("Unexpected value " + num);
+            else throw new RuntimeException("Unexpected value: " + num);
         }
 
         while (zeroCnt > 0) {
