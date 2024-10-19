@@ -2,17 +2,15 @@
 // Initial Template for Java
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class Main {
-
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(br.readLine().trim()); // Inputting the testcases
+        int t;
+        t = Integer.parseInt(br.readLine());
         while (t-- > 0) {
-
             String line = br.readLine();
             String[] tokens = line.split(" ");
 
@@ -28,10 +26,8 @@ public class Main {
             int idx = 0;
             for (int i : array) arr[idx++] = i;
 
-            Solution obj = new Solution();
-
-            // calling maxSubarraySum() function
-            System.out.println(obj.maxSubarraySum(arr));
+            System.out.println(new Solution().minJumps(arr));
+            // System.out.println("~");
         }
     }
 }
@@ -39,21 +35,25 @@ public class Main {
 // } Driver Code Ends
 
 
-// User function Template for Java
 class Solution {
+    public int minJumps(int[] arr) {
+        // code here
+        int currentReach = arr[0];
+        int maxReach = arr[0];
+        int steps = 1;
+        int n = arr.length;
 
-    // arr: input array
-    // Function to find the sum of contiguous subarray with maximum sum.
-    public int maxSubarraySum(int[] arr) {
-        // Your code here
-        int answer = Integer.MIN_VALUE;
-        int runningSum = 0;
-
-        for (int num : arr) {
-            runningSum = Math.max(runningSum + num, num);
-            answer = Math.max(answer, runningSum);
+        for (int i = 1; i < n; ++i) {
+            if (currentReach < i) return -1;
+            if (arr[i] > 0) {
+                maxReach = Math.max(maxReach, i + arr[i]);
+            }
+            if (currentReach == i && i != n - 1) {
+                ++steps;
+                currentReach = maxReach;
+            }
         }
 
-        return answer;
+        return steps;
     }
 }
