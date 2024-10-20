@@ -40,7 +40,7 @@ class Solution {
         // code here
         int currentReach = arr[0];
         int maxReach = arr[0];
-        int steps = 1;
+        int jumps = 1;
         int n = arr.length;
 
         for (int i = 1; i < n; ++i) {
@@ -49,11 +49,11 @@ class Solution {
                 maxReach = Math.max(maxReach, i + arr[i]);
             }
             if (currentReach == i && i != n - 1) {
-                ++steps;
+                ++jumps;
                 currentReach = maxReach;
             }
         }
 
-        return steps;
+        return jumps;
     }
 }
