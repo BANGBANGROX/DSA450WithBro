@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -42,7 +42,7 @@ class Solution {
     public List<int[]> mergeOverlap(int[][] arr) {
         // Code here
         int n = arr.length;
-        List<int[]> answer = new LinkedList<>();
+        List<int[]> answer = new ArrayList<>();
 
         Arrays.sort(arr, (a, b) -> a[0] != b[0] ? a[0] - b[0] : a[1] - b[1]);
 
