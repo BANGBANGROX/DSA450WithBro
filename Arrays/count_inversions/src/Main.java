@@ -21,7 +21,8 @@ public class Main {
 // User function Template for Java
 
 class Solution {
-    private int internalInversions(int[] arr, int left, int mid, int right) {
+    private int internalInversions(int[] arr, int left, int mid,
+                                   int right) {
         int i = left;
         int j = mid + 1;
         int k = 0;
@@ -59,7 +60,8 @@ class Solution {
         return inversions;
     }
 
-    private int inversionCountHandler(int[] arr, int left, int right) {
+    private int inversionCountHandler(int[] arr, int left,
+                                      int right) {
         int inversions = 0;
 
         if (left < right) {
