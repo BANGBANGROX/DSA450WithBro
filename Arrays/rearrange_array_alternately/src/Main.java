@@ -49,7 +49,7 @@ class Solution {
     // temp: input array
     // n: size of array
     //Function to rearrange  the array elements alternately.
-    public void rearrange(long[] arr, int n){
+    public void rearrange(long[] arr, int n) {
         // Your code here
         int left = 0;
         int right = n - 1;
