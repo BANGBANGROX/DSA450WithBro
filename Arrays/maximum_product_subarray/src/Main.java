@@ -39,8 +39,8 @@ class Solution {
                 maxProduct = minProduct;
                 minProduct = temp;
             }
-            maxProduct = Math.max(arr[i], maxProduct * num);
-            minProduct = Math.min(arr[i], minProduct * num);
+            maxProduct = Math.max(num, maxProduct * num);
+            minProduct = Math.min(num, minProduct * num);
             answer = Math.max(answer, maxProduct);
         }
 
