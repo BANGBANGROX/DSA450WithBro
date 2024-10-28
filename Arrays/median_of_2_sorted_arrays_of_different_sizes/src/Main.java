@@ -54,7 +54,7 @@ class GFG {
                 return (Math.max(first1, first2) + Math.min(last1, last2)) / 2.0;
             }
             if (first1 > last2) right = cut1 - 1;
-            else left = cut2 + 1;
+            else left = cut1 + 1;
         }
 
         return -1;
