@@ -49,10 +49,12 @@ class Solution {
         if (dp[len - 1]) return 1;
 
         for (int i = 0; i < len; ++i) {
-            for (int j = 0; j < i; ++j) {
-                if (dp[j] && dictionary.contains(s.substring(j + 1, i + 1))) {
-                    dp[i] = true;
-                    break;
+            if (!dp[i]) {
+                for (int j = 0; j < i; ++j) {
+                    if (dp[j] && dictionarySet.contains(s.substring(j + 1, i + 1))) {
+                        dp[i] = true;
+                        break;
+                    }
                 }
             }
         }
