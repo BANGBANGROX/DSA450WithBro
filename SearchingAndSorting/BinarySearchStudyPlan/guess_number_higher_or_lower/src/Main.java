@@ -1,15 +1,22 @@
 import java.util.Scanner;
 
-/**
- * Forward declaration of guess API.
- * @param  num   your guess
- * @return 	     -1 if num is higher than the picked number
- *			      1 if num is lower than the picked number
- *               otherwise return 0
- * int guess(int num);
- */
+class GuessGame {
+    private final int pick;
 
-public class Solution extends GuessGame {
+    GuessGame(int pick) {
+        this.pick = pick;
+    }
+
+    public int guess(int num) {
+        return Integer.compare(pick, num);
+    }
+}
+
+class Solution extends GuessGame {
+    Solution(int pick) {
+        super(pick);
+    }
+
     public int guessNumber(int n) {
         int left = 1;
         int right = n;
@@ -32,7 +39,7 @@ public class Main {
        int testCases = scanner.nextInt();
        
        while (testCases-- > 0) {
-           System.out.println(new Solution().guessNumber(scanner.nextInt()));
+           System.out.println(new Solution(10).guessNumber(scanner.nextInt()));
        }
        
        scanner.close();
