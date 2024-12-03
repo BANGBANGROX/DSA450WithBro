@@ -25,6 +25,13 @@ public class Main {
        int testCases = scanner.nextInt();
        
        while (testCases-- > 0) {
+           int n = scanner.nextInt();
+           int[] arr = new int[n];
+           for (int i = 0; i < n; ++i) {
+               arr[i] = scanner.nextInt();
+           }
+
+           System.out.println(new Solution().peakIndexInMountainArray(arr));
        }
        
        scanner.close();
